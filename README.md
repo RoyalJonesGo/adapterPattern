@@ -1,20 +1,25 @@
-# Adapter Pattern for Plugging Devices into Power Outlets
+# Lab Assignment 3 Adapter Pattern
 
-## Problem Statement
+## Plugging Devices into Power Outlets
 You are developing an application that helps users manage and control various electronic devices by plugging them into power outlets. Each device has different plug types, voltage, and amperage requirements. To ensure compatibility and safety, you need to create adapters for different devices to allow them to be plugged into standard power outlets.
 
-### Classes:
-- **Laptop**: Represents a laptop with a `charge()` method.
-- **Refrigerator**: Represents a refrigerator with a `startCooling()` method.
-- **SmartphoneCharger**: Represents a smartphone charger with a `chargePhone()` method.
-- **PowerOutlet**: Interface for plugging in devices using a `plugIn()` method.
-- **LaptopAdapter**: Adapter for Laptop.
-- **RefrigeratorAdapter**: Adapter for Refrigerator.
-- **SmartphoneAdapter**: Adapter for SmartphoneCharger.
 
-### UML Class Diagram
-Refer to the `adapterPatternImage.png` file for the UML class diagram.
+Adaptee Objects:
 
-## How to Run
-1. Clone the repository.
-2. Compile and run the `Main.java` file to see the output of each device being plugged into the power outlet via adapters.
+- Laptop - Represents a laptop device that needs to be plugged into a power source. It has the charge() method.
+
+- Refrigerator - Represents a refrigerator device that requires a power source. It has the startCooling() method.
+
+- SmartphoneCharger - Represents a smartphone charger that needs to be plugged in for charging. It has the chargePhone() method.
+
+Target Object:
+
+- PowerOutlet - Represents a standard power outlet with a common interface for plugging in devices. It defines the plugIn() method as the target method.
+
+Adapter Objects:
+
+- LaptopAdapter - An adapter for plugging a laptop into a standard power outlet. It adapts the Laptop to the PowerOutlet interface, translating plugIn() to charge().
+
+- RefrigeratorAdapter - An adapter for plugging a refrigerator into a standard power outlet. It adapts the Refrigerator to the PowerOutlet interface, translating plugIn() to startCooling().
+
+- SmartphoneAdapter - An adapter for plugging a smartphone charger into a standard power outlet. It adapts the SmartphoneCharger to the PowerOutlet interface, translating plugIn() to chargePhone().
